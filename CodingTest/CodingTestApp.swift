@@ -13,7 +13,7 @@ struct CodingTestApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PhotoSearchView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		D9E5ADB22934C78B00B08C7B /* CodingTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADB12934C78B00B08C7B /* CodingTestApp.swift */; };
-		D9E5ADB42934C78B00B08C7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADB32934C78B00B08C7B /* ContentView.swift */; };
 		D9E5ADB62934C78C00B08C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E5ADB52934C78C00B08C7B /* Assets.xcassets */; };
 		D9E5ADB92934C78C00B08C7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E5ADB82934C78C00B08C7B /* Preview Assets.xcassets */; };
 		D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADBA2934C78C00B08C7B /* Persistence.swift */; };
 		D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADBC2934C78C00B08C7B /* CodingTest.xcdatamodeld */; };
 		D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADCD2934C9CA00B08C7B /* FlickrDataModel.swift */; };
+		DBDF41602934F236000992FD /* APILoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF415F2934F236000992FD /* APILoaderService.swift */; };
+		DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41632934F6FC000992FD /* PhotoSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9E5ADAE2934C78B00B08C7B /* CodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E5ADB12934C78B00B08C7B /* CodingTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingTestApp.swift; sourceTree = "<group>"; };
-		D9E5ADB32934C78B00B08C7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9E5ADB52934C78C00B08C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E5ADB82934C78C00B08C7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9E5ADBA2934C78C00B08C7B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D9E5ADBD2934C78C00B08C7B /* CodingTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodingTest.xcdatamodel; sourceTree = "<group>"; };
 		D9E5ADCD2934C9CA00B08C7B /* FlickrDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrDataModel.swift; sourceTree = "<group>"; };
+		DBDF415F2934F236000992FD /* APILoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderService.swift; sourceTree = "<group>"; };
+		DBDF41632934F6FC000992FD /* PhotoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,10 @@
 		D9E5ADA52934C78B00B08C7B = {
 			isa = PBXGroup;
 			children = (
+				D9E5ADC52934C88700B08C7B /* Utilities */,
+				D9E5ADC82934C8B800B08C7B /* Models */,
+				DBDF41622934F6BA000992FD /* Views */,
+				DBDF41612934F6AF000992FD /* ViewModels */,
 				D9E5ADB02934C78B00B08C7B /* CodingTest */,
 				D9E5ADAF2934C78B00B08C7B /* Products */,
 			);
@@ -57,11 +63,6 @@
 		D9E5ADB02934C78B00B08C7B /* CodingTest */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5ADC52934C88700B08C7B /* Utilities */,
-				D9E5ADC82934C8B800B08C7B /* Models */,
-				D9E5ADC72934C8B400B08C7B /* ViewModels */,
-				D9E5ADC62934C8B200B08C7B /* Views */,
-				D9E5ADB32934C78B00B08C7B /* ContentView.swift */,
 				D9E5ADB12934C78B00B08C7B /* CodingTestApp.swift */,
 				D9E5ADB52934C78C00B08C7B /* Assets.xcassets */,
 				D9E5ADB72934C78C00B08C7B /* Preview Content */,
@@ -89,25 +90,10 @@
 		D9E5ADC52934C88700B08C7B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5ADCA2934C8CB00B08C7B /* Managers */,
-				D9E5ADC92934C8C200B08C7B /* Services */,
+				DBDF415E2934F21D000992FD /* Services */,
 				D9E5ADC42934C87E00B08C7B /* CoreData */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		D9E5ADC62934C8B200B08C7B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D9E5ADC72934C8B400B08C7B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D9E5ADC82934C8B800B08C7B /* Models */ = {
@@ -118,18 +104,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D9E5ADC92934C8C200B08C7B /* Services */ = {
+		DBDF415E2934F21D000992FD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF415F2934F236000992FD /* APILoaderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		D9E5ADCA2934C8CB00B08C7B /* Managers */ = {
+		DBDF41612934F6AF000992FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Managers;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBDF41622934F6BA000992FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +199,10 @@
 			files = (
 				D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */,
 				D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */,
-				D9E5ADB42934C78B00B08C7B /* ContentView.swift in Sources */,
+				DBDF41602934F236000992FD /* APILoaderService.swift in Sources */,
 				D9E5ADB22934C78B00B08C7B /* CodingTestApp.swift in Sources */,
 				D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */,
+				DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
