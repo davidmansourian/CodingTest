@@ -15,15 +15,15 @@ struct PhotoSearchView: View {
         NavigationStack{
             ScrollView{
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
-                    ForEach(searchResultVm.systemSearchResult?.photo ?? []){ searchResults in
-                        Image(searchResults.id)
+                    ForEach(searchResultVm.photosResults){ searchResults in
+                        Image(uiImage: searchResultVm.image ?? UIImage())
                             .resizable()
                             .aspectRatio(1, contentMode: .fill)
                             .border(Color.red)
                     }
                 }
-                .searchable(text: $searchAPI.searchString)
             }
+            .searchable(text: $searchAPI.searchString)
         }
     }
 }

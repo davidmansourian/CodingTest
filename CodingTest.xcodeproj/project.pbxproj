@@ -16,6 +16,7 @@
 		DBDF41602934F236000992FD /* APILoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF415F2934F236000992FD /* APILoaderService.swift */; };
 		DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41632934F6FC000992FD /* PhotoSearchView.swift */; };
 		DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41652934F951000992FD /* SearchResultsViewModel.swift */; };
+		DBDF416A293528DC000992FD /* ImageResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4169293528DC000992FD /* ImageResultsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DBDF415F2934F236000992FD /* APILoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderService.swift; sourceTree = "<group>"; };
 		DBDF41632934F6FC000992FD /* PhotoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchView.swift; sourceTree = "<group>"; };
 		DBDF41652934F951000992FD /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		DBDF4169293528DC000992FD /* ImageResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DBDF41652934F951000992FD /* SearchResultsViewModel.swift */,
+				DBDF4169293528DC000992FD /* ImageResultsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */,
 				D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */,
 				DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */,
+				DBDF416A293528DC000992FD /* ImageResultsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
