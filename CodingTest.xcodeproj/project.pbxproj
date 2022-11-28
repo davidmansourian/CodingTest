@@ -55,11 +55,10 @@
 		D9E5ADB02934C78B00B08C7B /* CodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				D9E5ADC52934C88700B08C7B /* Utilities */,
 				D9E5ADB12934C78B00B08C7B /* CodingTestApp.swift */,
 				D9E5ADB32934C78B00B08C7B /* ContentView.swift */,
 				D9E5ADB52934C78C00B08C7B /* Assets.xcassets */,
-				D9E5ADBA2934C78C00B08C7B /* Persistence.swift */,
-				D9E5ADBC2934C78C00B08C7B /* CodingTest.xcdatamodeld */,
 				D9E5ADB72934C78C00B08C7B /* Preview Content */,
 			);
 			path = CodingTest;
@@ -71,6 +70,23 @@
 				D9E5ADB82934C78C00B08C7B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9E5ADC42934C87E00B08C7B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5ADBA2934C78C00B08C7B /* Persistence.swift */,
+				D9E5ADBC2934C78C00B08C7B /* CodingTest.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D9E5ADC52934C88700B08C7B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5ADC42934C87E00B08C7B /* CoreData */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
