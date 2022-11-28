@@ -16,14 +16,11 @@ struct PhotoSearchView: View {
             ScrollView{
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
                     ForEach(searchResultVm.photosResults){ searchResults in
-                        Image(uiImage: searchResultVm.image ?? UIImage())
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fill)
-                            .border(Color.red)
+                        ImageGridView(model: searchResults)
                     }
                 }
             }
-            .searchable(text: $searchAPI.searchString)
+            .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
         }
     }
 }

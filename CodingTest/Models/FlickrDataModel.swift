@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct PhotoSearchModel: Decodable{
     let photos: PhotosResults
@@ -31,4 +32,9 @@ struct SinglePhoto: Identifiable, Decodable{
     let isfriend: Int
     let isfamily: Int
     var url: String?
+}
+
+struct ImagesArr{
+    let id: String
+    let image: UIImage
 }

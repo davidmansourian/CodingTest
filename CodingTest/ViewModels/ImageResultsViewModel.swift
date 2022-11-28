@@ -5,14 +5,10 @@
 //  Created by David on 2022-11-28.
 //
 
-/*import Foundation
+import Foundation
 import Combine
 import SwiftUI
-
-
 // https://live.staticflickr.com/{server-id}/{id}_{secret}.jpg , need to input search result details into this
-
-
 class ImageResultsViewModel: ObservableObject{
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
@@ -33,7 +29,6 @@ class ImageResultsViewModel: ObservableObject{
         guard let urlString = URL(string: urlString) else {
             self.isLoading = false
             return
-
         }
         
         URLSession.shared.dataTaskPublisher(for: urlString)
@@ -45,8 +40,7 @@ class ImageResultsViewModel: ObservableObject{
                 self?.image = theImage
             }
             .store(in: &cancellables)
-
     }
     
     
-}*/
+}

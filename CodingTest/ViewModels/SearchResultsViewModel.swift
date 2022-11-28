@@ -13,13 +13,14 @@ import SwiftUI
 
 class SearchResultsViewModel: ObservableObject{
     var photoSearchService = APILoaderService.shared
-    @Published var imagesArr: [UIImage]?
+    @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
     @Published var photosResults: [SinglePhoto] = []
     private var cancellables = Set<AnyCancellable>()
     
     init(){
         getSearchResults()
+
     }
     
     func getSearchResults(){
@@ -55,12 +56,8 @@ class SearchResultsViewModel: ObservableObject{
     }
     
     
-    
-    /*func getImageResults(){
+    func getImageResults(url: String){
         self.isLoading = true
-        let url = ""
-        
-        print(url)
         
         guard let urlString = URL(string: url) else {
             self.isLoading = false
@@ -78,7 +75,7 @@ class SearchResultsViewModel: ObservableObject{
             }
             .store(in: &cancellables)
 
-    }*/
+    }
     
     
 }
