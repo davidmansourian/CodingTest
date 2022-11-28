@@ -10,11 +10,13 @@ import Combine
 
 class APILoaderService{
     static let shared = APILoaderService()
-    @Published var flickrDataModel: [PhotoSearchModel] = []
+    @Published var photosModel: PhotoSearchModel?
     private var cancellables = Set<AnyCancellable>()
     private var jsonDecoder = JSONDecoder()
     
-    private init(){}
+    private init(){
+        getData()
+    }
     
     func getData(){
         let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e8d1203c8e9c9c625b8d4fad4d841140&tags=dogs&sort=+interestingness-desc&format=json&nojsoncallback=1&api_sig=e82e39c05cd1e1fd093cd7d343c66352"
@@ -29,7 +31,7 @@ class APILoaderService{
                 }
                 return element.data
             }
-            .decode(type: [PhotoSearchModel].self, decoder: jsonDecoder)
+            .decode(type: PhotoSearchModel.self, decoder: jsonDecoder)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion{
@@ -39,8 +41,8 @@ class APILoaderService{
                 case.failure(let error):
                     print("Error downloading data", error)
                 }
-            } receiveValue: { [weak self] serverResponse in
-                self?.flickrDataModel = serverResponse
+            } receiveValue: { [weak self] modelResponse in
+                self?.photosModel = modelResponse
             }
             .store(in: &cancellables)
         

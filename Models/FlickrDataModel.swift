@@ -8,22 +8,22 @@
 import Foundation
 
 struct PhotoSearchModel: Decodable{
-    let photos: Photos
+    let photos: PhotosResults
     let stat: String
 }
 
-struct Photos: Decodable{
+struct PhotosResults: Decodable{
     let page: Int
     let pages: Int
     let perpage: Int
     let total: Int
-    let photo: [Photo]
+    let photo: [SinglePhoto]
 }
 
-struct Photo: Decodable{
+struct SinglePhoto: Identifiable, Decodable{
     let id: String
     let owner: String
-    let Server: String
+    let server: String
     let farm: Int
     let title: String
     let ispublic: Int

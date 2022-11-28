@@ -15,6 +15,7 @@
 		D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5ADCD2934C9CA00B08C7B /* FlickrDataModel.swift */; };
 		DBDF41602934F236000992FD /* APILoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF415F2934F236000992FD /* APILoaderService.swift */; };
 		DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41632934F6FC000992FD /* PhotoSearchView.swift */; };
+		DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41652934F951000992FD /* SearchResultsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D9E5ADCD2934C9CA00B08C7B /* FlickrDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrDataModel.swift; sourceTree = "<group>"; };
 		DBDF415F2934F236000992FD /* APILoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderService.swift; sourceTree = "<group>"; };
 		DBDF41632934F6FC000992FD /* PhotoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchView.swift; sourceTree = "<group>"; };
+		DBDF41652934F951000992FD /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +45,10 @@
 		D9E5ADA52934C78B00B08C7B = {
 			isa = PBXGroup;
 			children = (
-				D9E5ADC52934C88700B08C7B /* Utilities */,
 				D9E5ADC82934C8B800B08C7B /* Models */,
-				DBDF41622934F6BA000992FD /* Views */,
+				D9E5ADC52934C88700B08C7B /* Utilities */,
 				DBDF41612934F6AF000992FD /* ViewModels */,
+				DBDF41622934F6BA000992FD /* Views */,
 				D9E5ADB02934C78B00B08C7B /* CodingTest */,
 				D9E5ADAF2934C78B00B08C7B /* Products */,
 			);
@@ -115,6 +117,7 @@
 		DBDF41612934F6AF000992FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF41652934F951000992FD /* SearchResultsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */,
 				DBDF41602934F236000992FD /* APILoaderService.swift in Sources */,
 				D9E5ADB22934C78B00B08C7B /* CodingTestApp.swift in Sources */,
+				DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */,
 				D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */,
 				DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */,
 			);

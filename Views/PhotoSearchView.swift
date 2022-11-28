@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct PhotoSearchView: View {
+    @StateObject var searchResultVm = SearchResultsViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            List{
+                ForEach(searchResultVm.photoSystemResult?.photo ?? []){ theResults in
+                    Text(theResults.title)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
 }
 
