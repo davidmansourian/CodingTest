@@ -19,7 +19,11 @@ class APILoaderService: ObservableObject{
         $searchString
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .default))
             .sink { [weak self] theSearchTerm in
-                self?.getData(searchString: theSearchTerm)
+                if theSearchTerm == ""{
+                    self?.getData(searchString: "mountains")
+                } else {
+                    self?.getData(searchString: theSearchTerm)
+                }
             }
             .store(in: &cancellables)
 

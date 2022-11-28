@@ -54,28 +54,4 @@ class SearchResultsViewModel: ObservableObject{
             photosResults[i].url = "https://live.staticflickr.com/\(serverId)/\(imageId)_\(secret).jpg"
         }
     }
-    
-    
-    func getImageResults(url: String){
-        self.isLoading = true
-        
-        guard let urlString = URL(string: url) else {
-            self.isLoading = false
-            return
-
-        }
-        
-        URLSession.shared.dataTaskPublisher(for: urlString)
-            .map{ UIImage(data: $0.data)}
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-            } receiveValue: { [weak self] theImage in
-                self?.image = theImage
-            }
-            .store(in: &cancellables)
-
-    }
-    
-    
 }

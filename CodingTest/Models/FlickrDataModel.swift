@@ -33,8 +33,3 @@ struct SinglePhoto: Identifiable, Decodable{
     let isfamily: Int
     var url: String?
 }
-
-struct ImagesArr{
-    let id: String
-    let image: UIImage
-}

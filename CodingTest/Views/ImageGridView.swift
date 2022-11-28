@@ -14,10 +14,3 @@ struct ImageGridView: View {
             ImageResultView(url: model.url ?? "")
     }
 }
-
-
-struct ImageGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageGridView(model: SinglePhoto(id: "1", owner: "1", secret: "1", server: "2", farm: 1, title: "1", ispublic: 1, isfriend: 1, isfamily: 1))
-    }
-}
