@@ -45,8 +45,9 @@
 		D9E5ADA52934C78B00B08C7B = {
 			isa = PBXGroup;
 			children = (
-				D9E5ADC82934C8B800B08C7B /* Models */,
+				D9E5ADC42934C87E00B08C7B /* CoreData */,
 				D9E5ADC52934C88700B08C7B /* Utilities */,
+				D9E5ADC82934C8B800B08C7B /* Models */,
 				DBDF41612934F6AF000992FD /* ViewModels */,
 				DBDF41622934F6BA000992FD /* Views */,
 				D9E5ADB02934C78B00B08C7B /* CodingTest */,
@@ -93,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				DBDF415E2934F21D000992FD /* Services */,
-				D9E5ADC42934C87E00B08C7B /* CoreData */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

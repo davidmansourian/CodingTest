@@ -12,6 +12,7 @@ class SearchResultsViewModel: ObservableObject{
     var photoSearchService = APILoaderService.shared
     @Published var photoSystemResult: PhotosResults?
     private var cancellable: Cancellable?
+    private var isLoading: Bool = false
     
     init(){
         getSearchResults()

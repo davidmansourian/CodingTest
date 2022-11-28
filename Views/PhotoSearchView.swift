@@ -9,14 +9,18 @@ import SwiftUI
 
 struct PhotoSearchView: View {
     @StateObject var searchResultVm = SearchResultsViewModel()
+    @StateObject var searchAPI = APILoaderService.shared
     var body: some View {
-        ZStack{
-            List{
-                ForEach(searchResultVm.photoSystemResult?.photo ?? []){ theResults in
-                    Text(theResults.title)
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
+        NavigationStack{
+            ZStack{
+                List{
+                    ForEach(searchResultVm.photoSystemResult?.photo ?? []){ theResults in
+                        Text(theResults.title)
+                            .font(.largeTitle)
+                            .foregroundColor(.black)
+                    }
                 }
+                .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
             }
         }
     }

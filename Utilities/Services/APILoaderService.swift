@@ -8,18 +8,25 @@
 import Foundation
 import Combine
 
-class APILoaderService{
+class APILoaderService: ObservableObject{
     static let shared = APILoaderService()
     @Published var photosModel: PhotoSearchModel?
+    @Published var searchString: String = ""
     private var cancellables = Set<AnyCancellable>()
     private var jsonDecoder = JSONDecoder()
     
     private init(){
-        getData()
+        $searchString
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .default))
+            .sink { [weak self] theSearchTerm in
+                self?.getData(searchString: theSearchTerm)
+            }
+            .store(in: &cancellables)
+
     }
     
-    func getData(){
-        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e8d1203c8e9c9c625b8d4fad4d841140&tags=dogs&sort=+interestingness-desc&format=json&nojsoncallback=1&api_sig=e82e39c05cd1e1fd093cd7d343c66352"
+    func getData(searchString: String){
+        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e8d1203c8e9c9c625b8d4fad4d841140&text='\(searchString)'&sort=+interestingness-desc&format=json&nojsoncallback=1"
         
         guard let urlString = URL(string: url) else { return }
         
