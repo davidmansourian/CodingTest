@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct PhotoSearchView: View {
+    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 0)]
     @StateObject var searchResultVm = SearchResultsViewModel()
     @StateObject var searchAPI = APILoaderService.shared
     var body: some View {
         NavigationStack{
-            ZStack{
-                List{
-                    ForEach(searchResultVm.photoSystemResult?.photo ?? []){ theResults in
-                        Text(theResults.title)
-                            .font(.largeTitle)
-                            .foregroundColor(.black)
+            ScrollView{
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
+                    ForEach(searchResultVm.systemSearchResult?.photo ?? []){ searchResults in
+                        Image(searchResults.id)
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fill)
+                            .border(Color.red)
                     }
                 }
-                .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
+                .searchable(text: $searchAPI.searchString)
             }
         }
     }

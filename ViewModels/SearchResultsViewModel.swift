@@ -10,14 +10,12 @@ import Combine
 
 class SearchResultsViewModel: ObservableObject{
     var photoSearchService = APILoaderService.shared
-    @Published var photoSystemResult: PhotosResults?
+    @Published var systemSearchResult: PhotosResults?
     private var cancellable: Cancellable?
-    private var isLoading: Bool = false
     
     init(){
         getSearchResults()
     }
-    
     
     func getSearchResults(){
         cancellable = photoSearchService.$photosModel
@@ -30,10 +28,11 @@ class SearchResultsViewModel: ObservableObject{
                     print("error")
                     print(error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] thePhotos in
+            }, receiveValue: { [weak self] theResults in
                 guard let self = self else { return }
-                self.photoSystemResult = thePhotos?.photos
+                self.systemSearchResult = theResults?.photos
             })
     }
+    
     
 }

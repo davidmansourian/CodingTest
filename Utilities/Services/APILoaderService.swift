@@ -26,18 +26,18 @@ class APILoaderService: ObservableObject{
     }
     
     func getData(searchString: String){
-        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e8d1203c8e9c9c625b8d4fad4d841140&text='\(searchString)'&sort=+interestingness-desc&format=json&nojsoncallback=1"
+        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c501bfe94d5c8a4e903109dca4d42551&text='\(searchString)'&sort=+interestingness-desc&safe_search=1&per_page=15&format=json&nojsoncallback=1"
         
         guard let urlString = URL(string: url) else { return }
         
         URLSession.shared.dataTaskPublisher(for: urlString)
-            .receive(on: DispatchQueue.main)
             .tryMap { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else{
                     throw URLError(.badServerResponse)
                 }
                 return element.data
             }
+            .removeDuplicates()
             .decode(type: PhotoSearchModel.self, decoder: jsonDecoder)
             .receive(on: DispatchQueue.main)
             .sink { completion in
