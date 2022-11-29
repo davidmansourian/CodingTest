@@ -53,6 +53,10 @@ struct PickedPhotoView: View {
                 )
                 .cornerRadius(15)
                 .padding()
+                .onTapGesture(count: 2){
+                    pickedImageVm.handleImage()
+                    isButtonFilled.toggle()
+                }
                 
                 Button {
                     isButtonFilled.toggle()

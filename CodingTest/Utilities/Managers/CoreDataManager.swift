@@ -20,7 +20,7 @@ class CoreDataManager: ObservableObject{
     private init(){}
     
     func photoIsLiked(urlString: String, keyString: String) -> Bool {
-        let fetchRequest : NSFetchRequest<Item> = Item.fetchRequest()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         let predicate = NSPredicate(format: "imageUrl == %@ AND imageKey == %@", urlString, keyString)
         fetchRequest.predicate = predicate
         fetchRequest.fetchLimit = 1

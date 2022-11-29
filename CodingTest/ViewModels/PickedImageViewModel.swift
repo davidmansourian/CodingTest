@@ -13,6 +13,7 @@ class PickedImageViewModel: ObservableObject{
     @Published var likedUrlString: String = ""
     @Published var likedKeyString: String = ""
     @Published var likeButtonIsPressed: Bool = false
+    @Published var didDoubleTap: Bool = false
     var coreDataManager = CoreDataManager.shared
     private var cancellables = Set<AnyCancellable>()
     var isLiked: Bool = false
