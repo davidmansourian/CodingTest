@@ -30,7 +30,7 @@ class APILoaderService: ObservableObject{
     }
     
     func getData(searchString: String){
-        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c501bfe94d5c8a4e903109dca4d42551&tags='\(searchString)'&safe_search=1&per_page=15&format=json&nojsoncallback=1"
+        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e0e0491ecf307142438276bcaea824b9&text='\(searchString)'&sort=relevance&safe_search=1&format=json&nojsoncallback=1"
         
         guard let urlString = URL(string: url) else { return }
         
