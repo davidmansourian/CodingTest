@@ -18,10 +18,11 @@
 		DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41652934F951000992FD /* SearchResultsViewModel.swift */; };
 		DBDF41722935570D000992FD /* ImageResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41712935570D000992FD /* ImageResultsViewModel.swift */; };
 		DBDF417429355745000992FD /* ImageResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417329355745000992FD /* ImageResultView.swift */; };
-		DBDF417729355860000992FD /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417629355860000992FD /* ImageGridView.swift */; };
+		DBDF417729355860000992FD /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417629355860000992FD /* SingleImageView.swift */; };
 		DBDF417A29361DBE000992FD /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417929361DBE000992FD /* CacheManager.swift */; };
 		DBDF417C29364050000992FD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417B29364050000992FD /* MainTabView.swift */; };
 		DBDF417E2936410A000992FD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417D2936410A000992FD /* ProfileView.swift */; };
+		DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418229364732000992FD /* PickedPhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +38,11 @@
 		DBDF41652934F951000992FD /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		DBDF41712935570D000992FD /* ImageResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultsViewModel.swift; sourceTree = "<group>"; };
 		DBDF417329355745000992FD /* ImageResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultView.swift; sourceTree = "<group>"; };
-		DBDF417629355860000992FD /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		DBDF417629355860000992FD /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 		DBDF417929361DBE000992FD /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		DBDF417B29364050000992FD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DBDF417D2936410A000992FD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DBDF418229364732000992FD /* PickedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +143,10 @@
 			children = (
 				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
 				DBDF417329355745000992FD /* ImageResultView.swift */,
-				DBDF417629355860000992FD /* ImageGridView.swift */,
+				DBDF417629355860000992FD /* SingleImageView.swift */,
 				DBDF417B29364050000992FD /* MainTabView.swift */,
 				DBDF417D2936410A000992FD /* ProfileView.swift */,
+				DBDF418229364732000992FD /* PickedPhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,9 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBDF417729355860000992FD /* ImageGridView.swift in Sources */,
+				DBDF417729355860000992FD /* SingleImageView.swift in Sources */,
 				DBDF417E2936410A000992FD /* ProfileView.swift in Sources */,
 				D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */,
+				DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */,
 				D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */,
 				DBDF417429355745000992FD /* ImageResultView.swift in Sources */,
 				DBDF41602934F236000992FD /* APILoaderService.swift in Sources */,

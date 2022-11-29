@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct ImageGridView: View {
-    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 0)]
+struct SingleImageView: View {
     var model: SinglePhoto
     var body: some View {
         ImageResultView(url: model.url ?? "", key: model.id)

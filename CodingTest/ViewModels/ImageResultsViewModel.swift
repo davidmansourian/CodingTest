@@ -37,7 +37,6 @@ class ImageResultsViewModel: ObservableObject{
     }
     
     
-    
     func downloadImageResult(){
         self.isLoading = true
         
