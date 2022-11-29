@@ -17,9 +17,11 @@ class ImageResultsViewModel: ObservableObject{
     
     
     let urlString: String
+    let cacheKey: String
     
-    init(url: String){
+    init(url: String, key: String){
         urlString = url
+        cacheKey = key
         getImage()
     }
     
@@ -56,7 +58,7 @@ class ImageResultsViewModel: ObservableObject{
                     return
                 }
                 self.image = image
-                self.cacheManager.add(key: self.urlString, value: image)
+                self.cacheManager.add(key: self.cacheKey, value: image)
             }
             .store(in: &cancellables)
     }

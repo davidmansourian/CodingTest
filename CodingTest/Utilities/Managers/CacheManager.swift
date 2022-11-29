@@ -26,10 +26,12 @@ class CacheManager: ObservableObject{
     }()
     
     func add(key: String, value: UIImage){
+        print("DEBUG: added cached item with key \(key)")
         photoCache.setObject(value, forKey: key as NSString)
     }
     
     func get(key: String) -> UIImage?{
+        print("DEBUG: fetching cached item with key \(key)")
         return photoCache.object(forKey: key as NSString)
     }
 }

@@ -23,6 +23,9 @@ class APILoaderService: ObservableObject{
     let format = "json"
     let noJsonCallback = "1"
     
+    var perPage: String = ""
+    var page: String = ""
+    
     
     private init(){
         $searchString
@@ -39,9 +42,12 @@ class APILoaderService: ObservableObject{
     }
     
     
+    // https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e0e0491ecf307142438276bcaea824b9&text=%22%22&sort=relevance&safe_search=1&per_page=100&page=1&format=json&nojsoncallback=1
+    
     // Spaces didn't work in search results. Investigated the issue and found URLcomponents. Seems like a better way to build url strings for APIs. Don't know if it is the best idea to use the searchString in the buildURL, will revise later if so.
     
     // info taken from https://developer.apple.com/forums/thread/679238
+    
     
     func buildUrl(searchString: String){
         var components = URLComponents(string: apiUrl)
@@ -51,6 +57,7 @@ class APILoaderService: ObservableObject{
                                   URLQueryItem(name: "text", value: searchString),
                                   URLQueryItem(name: "sort", value: chosenSort),
                                   URLQueryItem(name: "safe_search", value: safeSearch),
+                                  URLQueryItem(name: "per_page", value: "500"),
                                   URLQueryItem(name: "format", value: format),
                                   URLQueryItem(name: "nojsoncallback", value: noJsonCallback)]
         
