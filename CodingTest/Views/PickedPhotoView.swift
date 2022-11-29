@@ -10,6 +10,7 @@ import SwiftUI
 struct PickedPhotoView: View {
     @StateObject var pickedImageVm = PickedImageViewModel()
     @StateObject var imageResultsVm: ImageResultsViewModel
+    @State var isButtonFilled: Bool = false
     
     init(url: String, key: String){
         _imageResultsVm = StateObject(wrappedValue: ImageResultsViewModel(url: url, key: key))
@@ -54,25 +55,30 @@ struct PickedPhotoView: View {
                 .padding()
                 
                 Button {
-                    pickedImageVm.likeButtonTapped.toggle()
-                    pickedImageVm.likedUrlString = imageResultsVm.urlString
-                    pickedImageVm.likedKeyString = imageResultsVm.imageKey
-                    print("DEBUG: Pressed like button")
+                    isButtonFilled.toggle()
+                    pickedImageVm.handleImage()
                 } label: {
-                    if pickedImageVm.isLiked{
+                    if isButtonFilled{
                         Image(systemName: "heart.fill")
                             .font(.largeTitle)
                             .foregroundColor(.red)
+                    } else if !isButtonFilled{
+                        Image(systemName: "heart")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
                     }
-                    Image(systemName: "heart")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
                 }
 
             }
             .offset(y: -60)
         }
+        .onAppear{
+            pickedImageVm.likedUrlString = imageResultsVm.urlString
+            pickedImageVm.likedKeyString = imageResultsVm.imageKey
+            isButtonFilled = pickedImageVm.isLiked
+        }
     }
+
 }
 
 struct PickedPhotoView_Previews: PreviewProvider {

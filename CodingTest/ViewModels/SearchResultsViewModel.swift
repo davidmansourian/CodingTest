@@ -13,6 +13,7 @@ import SwiftUI
 
 class SearchResultsViewModel: ObservableObject{
     var photoSearchService = APILoaderService.shared
+    static let shared = SearchResultsViewModel()
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
     @Published var photosResults: [SinglePhoto] = []

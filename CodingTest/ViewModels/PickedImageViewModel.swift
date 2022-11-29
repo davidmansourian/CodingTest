@@ -12,20 +12,13 @@ import Combine
 class PickedImageViewModel: ObservableObject{
     @Published var likedUrlString: String = ""
     @Published var likedKeyString: String = ""
-    @Published var likeButtonTapped: Bool = false
+    @Published var likeButtonIsPressed: Bool = false
     var coreDataManager = CoreDataManager.shared
     private var cancellables = Set<AnyCancellable>()
     var isLiked: Bool = false
     
     init(){
         checkIfLiked()
-        $likeButtonTapped
-            .sink { [weak self] isTapped in
-                guard let self = self else { return }
-                if isTapped{
-                    self.handleImage()
-                }
-            }.store(in: &cancellables)
     }
     
     func checkIfLiked(){
@@ -49,6 +42,7 @@ class PickedImageViewModel: ObservableObject{
                     print("Couldn't register liked image.", error)
                 }
             }, receiveValue: { [weak self] likedImageUrl, likedImageString in
+                self?.likeButtonIsPressed = true
                 self?.coreDataManager.likeUnlikeImage(urlString: likedImageUrl, keyString: likedImageString)
             })
             .store(in: &cancellables)

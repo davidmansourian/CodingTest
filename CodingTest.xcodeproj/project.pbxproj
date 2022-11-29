@@ -25,6 +25,7 @@
 		DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418229364732000992FD /* PickedPhotoView.swift */; };
 		DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418A29365DB3000992FD /* CoreDataManager.swift */; };
 		DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418C29366319000992FD /* PickedImageViewModel.swift */; };
+		DBDF419329369411000992FD /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF419229369411000992FD /* LikeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		DBDF418229364732000992FD /* PickedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedPhotoView.swift; sourceTree = "<group>"; };
 		DBDF418A29365DB3000992FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DBDF418C29366319000992FD /* PickedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImageViewModel.swift; sourceTree = "<group>"; };
+		DBDF419229369411000992FD /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		DBDF41622934F6BA000992FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF4191293693BD000992FD /* Buttons */,
 				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
 				DBDF417329355745000992FD /* ImageResultView.swift */,
 				DBDF417629355860000992FD /* SingleImageView.swift */,
@@ -163,6 +166,14 @@
 				DBDF418A29365DB3000992FD /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		DBDF4191293693BD000992FD /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF419229369411000992FD /* LikeButtonView.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			files = (
 				DBDF417729355860000992FD /* SingleImageView.swift in Sources */,
 				DBDF417E2936410A000992FD /* ProfileView.swift in Sources */,
+				DBDF419329369411000992FD /* LikeButtonView.swift in Sources */,
 				D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */,
 				DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */,
 				DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */,

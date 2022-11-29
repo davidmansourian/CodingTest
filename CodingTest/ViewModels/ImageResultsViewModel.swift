@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
-// https://live.staticflickr.com/{server-id}/{id}_{secret}.jpg , need to input search result details into this
+
 class ImageResultsViewModel: ObservableObject{
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false

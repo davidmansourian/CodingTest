@@ -3,6 +3,5 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="imageKey" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
-        <attribute name="recordId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
 </model>

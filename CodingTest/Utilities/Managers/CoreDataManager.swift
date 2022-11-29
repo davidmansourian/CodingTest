@@ -43,19 +43,22 @@ class CoreDataManager: ObservableObject{
     func likeUnlikeImage(urlString: String, keyString: String){
         if !photoIsLiked(urlString: urlString, keyString: keyString){
             let image = Item(context: moc)
-            image.recordId = UUID()
             image.imageUrl = urlString
             image.imageKey = keyString
             try? moc.save()
         }
         else if photoIsLiked(urlString: urlString, keyString: keyString){
-            for image in likedImages{
-                if image.imageKey == keyString{
-                    moc.delete(image)
-                }
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+            let predicate = NSPredicate(format: "imageKey == %@", keyString)
+            fetchRequest.predicate = predicate
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            do{
+                try moc.execute(deleteRequest)
+                try moc.save()
+                
+            } catch {
+                print("DEBUG: Couldn't delete row in database", error)
             }
-            
-            try? moc.save()
         }
     }
     
