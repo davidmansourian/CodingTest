@@ -15,24 +15,53 @@ class APILoaderService: ObservableObject{
     private var cancellables = Set<AnyCancellable>()
     private var jsonDecoder = JSONDecoder()
     
+    let apiUrl = "https://api.flickr.com/services/rest/"
+    let chosenMethod = "flickr.photos.search"
+    let appKey = "3ace85391fe1920dc335451547af721e"
+    let chosenSort = "relevance"
+    let safeSearch = "1"
+    let format = "json"
+    let noJsonCallback = "1"
+    
+    
     private init(){
         $searchString
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .default))
             .sink { [weak self] theSearchTerm in
                 if theSearchTerm == ""{
-                    self?.getData(searchString: "mountains")
+                    self?.buildUrl(searchString: "mountain")
                 } else {
-                    self?.getData(searchString: theSearchTerm)
+                    self?.buildUrl(searchString: theSearchTerm)
                 }
             }
             .store(in: &cancellables)
 
     }
     
-    func getData(searchString: String){
-        let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e0e0491ecf307142438276bcaea824b9&text='\(searchString)'&sort=relevance&safe_search=1&format=json&nojsoncallback=1"
+    
+    // Spaces didn't work in search results. Investigated the issue and found URLcomponents. Seems like a better way to build url strings for APIs. Don't know if it is the best idea to use the searchString in the buildURL, will revise later if so.
+    
+    // info taken from https://developer.apple.com/forums/thread/679238
+    
+    func buildUrl(searchString: String){
+        var components = URLComponents(string: apiUrl)
         
-        guard let urlString = URL(string: url) else { return }
+        components?.queryItems = [URLQueryItem(name: "method", value: chosenMethod),
+                                  URLQueryItem(name: "api_key", value: appKey),
+                                  URLQueryItem(name: "text", value: searchString),
+                                  URLQueryItem(name: "sort", value: chosenSort),
+                                  URLQueryItem(name: "safe_search", value: safeSearch),
+                                  URLQueryItem(name: "format", value: format),
+                                  URLQueryItem(name: "nojsoncallback", value: noJsonCallback)]
+        
+        getData(url: components?.url ?? URL(fileURLWithPath: ""))
+        print(components?.url ?? "")
+    }
+    
+    func getData(url: URL){
+        let theUrl = url.absoluteString
+        
+        guard let urlString = URL(string: theUrl) else { return }
         
         URLSession.shared.dataTaskPublisher(for: urlString)
             .tryMap { element -> Data in
