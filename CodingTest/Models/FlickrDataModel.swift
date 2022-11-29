@@ -32,4 +32,5 @@ struct SinglePhoto: Identifiable, Decodable{
     let isfriend: Int
     let isfamily: Int
     var url: String?
+    var isLiked: Bool?
 }

@@ -23,6 +23,8 @@
 		DBDF417C29364050000992FD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417B29364050000992FD /* MainTabView.swift */; };
 		DBDF417E2936410A000992FD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417D2936410A000992FD /* ProfileView.swift */; };
 		DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418229364732000992FD /* PickedPhotoView.swift */; };
+		DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418A29365DB3000992FD /* CoreDataManager.swift */; };
+		DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418C29366319000992FD /* PickedImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		DBDF417B29364050000992FD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DBDF417D2936410A000992FD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DBDF418229364732000992FD /* PickedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedPhotoView.swift; sourceTree = "<group>"; };
+		DBDF418A29365DB3000992FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DBDF418C29366319000992FD /* PickedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			children = (
 				DBDF41652934F951000992FD /* SearchResultsViewModel.swift */,
 				DBDF41712935570D000992FD /* ImageResultsViewModel.swift */,
+				DBDF418C29366319000992FD /* PickedImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				DBDF417929361DBE000992FD /* CacheManager.swift */,
+				DBDF418A29365DB3000992FD /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -232,6 +238,8 @@
 				DBDF417729355860000992FD /* SingleImageView.swift in Sources */,
 				DBDF417E2936410A000992FD /* ProfileView.swift in Sources */,
 				D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */,
+				DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */,
+				DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */,
 				DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */,
 				D9E5ADCE2934C9CA00B08C7B /* FlickrDataModel.swift in Sources */,
 				DBDF417429355745000992FD /* ImageResultView.swift in Sources */,

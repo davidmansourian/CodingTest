@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PickedPhotoView: View {
+    @StateObject var pickedImageVm = PickedImageViewModel()
     @StateObject var imageResultsVm: ImageResultsViewModel
     
     init(url: String, key: String){
@@ -53,8 +54,16 @@ struct PickedPhotoView: View {
                 .padding()
                 
                 Button {
+                    pickedImageVm.likeButtonTapped.toggle()
+                    pickedImageVm.likedUrlString = imageResultsVm.urlString
+                    pickedImageVm.likedKeyString = imageResultsVm.imageKey
                     print("DEBUG: Pressed like button")
                 } label: {
+                    if pickedImageVm.isLiked{
+                        Image(systemName: "heart.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                    }
                     Image(systemName: "heart")
                         .font(.largeTitle)
                         .foregroundColor(.white)
