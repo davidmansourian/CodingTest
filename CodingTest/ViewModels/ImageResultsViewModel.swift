@@ -13,17 +13,30 @@ class ImageResultsViewModel: ObservableObject{
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
     private var cancellables = Set<AnyCancellable>()
+    let cacheManager = CacheManager.shared
+    
     
     let urlString: String
     
     init(url: String){
         urlString = url
-        getImageResults()
+        getImage()
+    }
+    
+    
+    func getImage(){
+        if let cachedImage = cacheManager.get(key: urlString){
+            image = cachedImage
+            print("Getting cached image")
+        } else {
+            downloadImageResult()
+            print("Downloading image")
+        }
     }
     
     
     
-    func getImageResults(){
+    func downloadImageResult(){
         self.isLoading = true
         
         guard let urlString = URL(string: urlString) else {
@@ -37,7 +50,13 @@ class ImageResultsViewModel: ObservableObject{
             .sink { [weak self] _ in
                 self?.isLoading = false
             } receiveValue: { [weak self] theImage in
-                self?.image = theImage
+                guard let self = self,
+                      let image = theImage
+                else{
+                    return
+                }
+                self.image = image
+                self.cacheManager.add(key: self.urlString, value: image)
             }
             .store(in: &cancellables)
     }

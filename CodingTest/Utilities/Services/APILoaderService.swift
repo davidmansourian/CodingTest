@@ -79,7 +79,7 @@ class APILoaderService: ObservableObject{
                     print("DEBUG: APIService has successfully fetched and decoded JSON-data")
                     break
                 case.failure(let error):
-                    print("Error downloading data", error)
+                    print("DEBUG: Error downloading data", error)
                 }
             } receiveValue: { [weak self] modelResponse in
                 self?.photosModel = modelResponse

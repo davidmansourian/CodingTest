@@ -28,10 +28,10 @@ class SearchResultsViewModel: ObservableObject{
             .sink(receiveCompletion: { completion in
                 switch completion{
                 case.finished:
-                    print("Finished grapping photos array from service")
+                    print("DEBUG: Finished grapping photos array from service")
                     break
                 case.failure(let error):
-                    print("error")
+                    print("DEBUG: error")
                     print(error.localizedDescription)
                 }
             }, receiveValue: { [weak self] theResults in

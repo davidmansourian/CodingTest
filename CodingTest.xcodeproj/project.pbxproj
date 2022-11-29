@@ -19,6 +19,7 @@
 		DBDF41722935570D000992FD /* ImageResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41712935570D000992FD /* ImageResultsViewModel.swift */; };
 		DBDF417429355745000992FD /* ImageResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417329355745000992FD /* ImageResultView.swift */; };
 		DBDF417729355860000992FD /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417629355860000992FD /* ImageGridView.swift */; };
+		DBDF417A29361DBE000992FD /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF417929361DBE000992FD /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DBDF41712935570D000992FD /* ImageResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultsViewModel.swift; sourceTree = "<group>"; };
 		DBDF417329355745000992FD /* ImageResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultView.swift; sourceTree = "<group>"; };
 		DBDF417629355860000992FD /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		DBDF417929361DBE000992FD /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D9E5ADC52934C88700B08C7B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF417829361D96000992FD /* Managers */,
 				DBDF415E2934F21D000992FD /* Services */,
 			);
 			path = Utilities;
@@ -137,6 +140,14 @@
 				DBDF417629355860000992FD /* ImageGridView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DBDF417829361D96000992FD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF417929361DBE000992FD /* CacheManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 				DBDF417429355745000992FD /* ImageResultView.swift in Sources */,
 				DBDF41602934F236000992FD /* APILoaderService.swift in Sources */,
 				D9E5ADB22934C78B00B08C7B /* CodingTestApp.swift in Sources */,
+				DBDF417A29361DBE000992FD /* CacheManager.swift in Sources */,
 				DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */,
 				D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */,
 				DBDF41642934F6FC000992FD /* PhotoSearchView.swift in Sources */,
