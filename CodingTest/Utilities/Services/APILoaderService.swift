@@ -57,7 +57,7 @@ class APILoaderService: ObservableObject{
                                   URLQueryItem(name: "text", value: searchString),
                                   URLQueryItem(name: "sort", value: chosenSort),
                                   URLQueryItem(name: "safe_search", value: safeSearch),
-                                  URLQueryItem(name: "per_page", value: "500"),
+                                  URLQueryItem(name: "per_page", value: "48"),
                                   URLQueryItem(name: "format", value: format),
                                   URLQueryItem(name: "nojsoncallback", value: noJsonCallback)]
         

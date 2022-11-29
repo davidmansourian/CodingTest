@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct PhotoSearchView: View {
-    @State private var isShowing: Bool = false
-    @State private var isNotShowing: Bool = false
+
     private let columns = [GridItem(.adaptive(minimum: 100), spacing: 0)]
     @StateObject var searchResultVm = SearchResultsViewModel()
     @StateObject var searchAPI = APILoaderService.shared
+    
+    @State var isShowing: Bool = false
+    
     var body: some View {
         ZStack {
             NavigationStack{
@@ -20,8 +22,10 @@ struct PhotoSearchView: View {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
                         ForEach(searchResultVm.photosResults){ searchResults in
                             Button {
-                                withAnimation(.default){
-                                    isShowing.toggle()
+                                withAnimation(.easeInOut(duration: 0.5)){
+                                    searchResultVm.pickedImageUrl = searchResults.url ?? ""
+                                    searchResultVm.pickedImageKey = searchResults.id
+                                    searchResultVm.isShowing.toggle()
                                 }
                             } label: {
                                 SingleImageView(model: searchResults)
@@ -31,14 +35,16 @@ struct PhotoSearchView: View {
                 }
                 .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
             }
-            if isShowing{
-                PickedPhotoView(url: "https://live.staticflickr.com/7360/27683548156_7fa2d3e773.jpg", key: "")
+            if searchResultVm.isShowing{
+                PickedPhotoView(url: searchResultVm.pickedImageUrl, key: searchResultVm.pickedImageKey)
                     .onTapGesture {
-                        isShowing.toggle()
+                        withAnimation(.easeInOut(duration: 0.5)){
+                            searchResultVm.isShowing.toggle()
+                        }
                     }
+                    .toolbar(.hidden, for: .tabBar)
             }
         }
-        .toolbar(.hidden, for: .tabBar)
     }
 }
 

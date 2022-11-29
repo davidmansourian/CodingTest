@@ -20,7 +20,7 @@ class CacheManager: ObservableObject{
     
     var photoCache: NSCache<NSString, UIImage> = {
         var cache = NSCache<NSString, UIImage>()
-        cache.countLimit = 100
+        cache.countLimit = 50
         cache.totalCostLimit = 1024 * 1024 * 100
         return cache
     }()

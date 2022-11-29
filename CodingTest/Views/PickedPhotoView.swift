@@ -19,39 +19,49 @@ struct PickedPhotoView: View {
             Color.black.opacity(0.9)
                 .edgesIgnoringSafeArea(.all)
             
-            Image(systemName: "heart")
-                .foregroundColor(.white)
+
             
             VStack{
-                
-                if imageResultsVm.isLoading{
-                    ProgressView()
-                } else if let image = imageResultsVm.image{
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 380)
-                        .cornerRadius(15)
-                }
-                
                 VStack{
-                    Text("This is a test text for images. The image title will ideally be shown beneath the picture along with image related tags The thought is that the user can browse more photos like this by pressing the tag")
-                        .padding(.top, 10)
-                        .padding(.horizontal, 10)
-                        .foregroundColor(.white)
-                        .layoutPriority(1)
-                    Text("#mountain #snow #white #alps #snowboard #goals")
-                        .padding(.top, 10)
-                        .foregroundColor(.blue)
+                    if imageResultsVm.isLoading{
+                        ProgressView()
+                    } else if let image = imageResultsVm.image{
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 380)
+                            .cornerRadius(15)
+                    }
                     
+                    VStack{
+                        Text("This is a test text for images. The image title will ideally be shown beneath the picture along with image related tags The thought is that the user can browse more photos like this by pressing the tag")
+                            .padding(.top, 10)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.white)
+                            .layoutPriority(1)
+                        Text("#mountain #snow #white #alps #snowboard #goals")
+                            .padding(.top, 10)
+                            .foregroundColor(.blue)
+                        
+                    }
                 }
+                .background(
+                    Rectangle()
+                        .fill(Color.white.opacity(0.2))
+                )
+                .cornerRadius(15)
+                .padding()
+                
+                Button {
+                    print("DEBUG: Pressed like button")
+                } label: {
+                    Image(systemName: "heart")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
+
             }
-            .background(
-                Rectangle()
-                    .fill(Color.white.opacity(0.2))
-            )
-            .cornerRadius(15)
-            .padding()
+            .offset(y: -60)
         }
     }
 }

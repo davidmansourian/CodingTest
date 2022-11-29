@@ -12,16 +12,17 @@ import SwiftUI
 class ImageResultsViewModel: ObservableObject{
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
+    
     private var cancellables = Set<AnyCancellable>()
     let cacheManager = CacheManager.shared
     
     
     let urlString: String
-    let cacheKey: String
+    let imageKey: String
     
     init(url: String, key: String){
         urlString = url
-        cacheKey = key
+        imageKey = key
         getImage()
     }
     
@@ -57,9 +58,13 @@ class ImageResultsViewModel: ObservableObject{
                     return
                 }
                 self.image = image
-                self.cacheManager.add(key: self.cacheKey, value: image)
+                self.cacheManager.add(key: self.imageKey, value: image)
             }
             .store(in: &cancellables)
+    }
+    
+    func getPickedImageDetails(){
+        
     }
     
     

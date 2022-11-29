@@ -18,11 +18,15 @@ class SearchResultsViewModel: ObservableObject{
     @Published var photosResults: [SinglePhoto] = []
     private var cancellables = Set<AnyCancellable>()
     
+    @Published var isShowing: Bool = false
+    @Published var pickedImageUrl: String = ""
+    @Published var pickedImageKey: String = ""
+    
     init(){
         getSearchResults()
 
     }
-    
+
     func getSearchResults(){
         photoSearchService.$photosModel
             .sink(receiveCompletion: { completion in
