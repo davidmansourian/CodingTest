@@ -26,6 +26,7 @@
 		DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418A29365DB3000992FD /* CoreDataManager.swift */; };
 		DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418C29366319000992FD /* PickedImageViewModel.swift */; };
 		DBDF419329369411000992FD /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF419229369411000992FD /* LikeButtonView.swift */; };
+		DBDF4195293755F7000992FD /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4194293755F7000992FD /* ProfilePageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DBDF418A29365DB3000992FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DBDF418C29366319000992FD /* PickedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImageViewModel.swift; sourceTree = "<group>"; };
 		DBDF419229369411000992FD /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
+		DBDF4194293755F7000992FD /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				DBDF41652934F951000992FD /* SearchResultsViewModel.swift */,
 				DBDF41712935570D000992FD /* ImageResultsViewModel.swift */,
 				DBDF418C29366319000992FD /* PickedImageViewModel.swift */,
+				DBDF4194293755F7000992FD /* ProfilePageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				DBDF417429355745000992FD /* ImageResultView.swift in Sources */,
 				DBDF41602934F236000992FD /* APILoaderService.swift in Sources */,
 				D9E5ADB22934C78B00B08C7B /* CodingTestApp.swift in Sources */,
+				DBDF4195293755F7000992FD /* ProfilePageViewModel.swift in Sources */,
 				DBDF417A29361DBE000992FD /* CacheManager.swift in Sources */,
 				DBDF41662934F951000992FD /* SearchResultsViewModel.swift in Sources */,
 				D9E5ADBE2934C78C00B08C7B /* CodingTest.xcdatamodeld in Sources */,

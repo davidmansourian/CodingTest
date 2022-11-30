@@ -16,6 +16,7 @@ struct PhotoSearchView: View {
     
     var body: some View {
         ZStack {
+            Color.blue.opacity(0.3)
             NavigationStack{
                 ScrollView{
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
@@ -32,9 +33,9 @@ struct PhotoSearchView: View {
                         }
                     }
                 }
-                .searchable(text: $searchAPI.searchString, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Search any image").autocorrectionDisabled()
                 
             }
+            .searchable(text: $searchAPI.searchString)
             if searchResultVm.isShowing{
                 PickedPhotoView(url: searchResultVm.pickedImageUrl, key: searchResultVm.pickedImageKey)
                     .onTapGesture {

@@ -19,6 +19,21 @@ class CoreDataManager: ObservableObject{
     
     private init(){}
     
+    
+    func fetchLikedData(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        do {
+            let fetchedData = try moc.fetch(fetchRequest)
+            print(fetchedData)
+        } catch let error {
+            print ("Error fetching all data", error)
+        }
+        
+
+    }
+    
+    
+    
     func photoIsLiked(urlString: String, keyString: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         let predicate = NSPredicate(format: "imageUrl == %@ AND imageKey == %@", urlString, keyString)
