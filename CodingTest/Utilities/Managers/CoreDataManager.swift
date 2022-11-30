@@ -14,13 +14,14 @@ import SwiftUI
 class CoreDataManager: ObservableObject{
     static let shared = CoreDataManager()
     var moc = PersistenceController.shared.container.viewContext
-    @FetchRequest(sortDescriptors: []) var likedImages: FetchedResults<Item>
     private var cancellable: Cancellable?
+    @Published var likedPhotoData: [Item] = []
     
-    private init(){}
+    private init(){
+    }
     
     
-    func fetchLikedData()->[Item]{
+    func fetchLikedData(){
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         
         var fetchedData: [Item] = []
@@ -28,10 +29,11 @@ class CoreDataManager: ObservableObject{
         do {
             fetchedData = try moc.fetch(fetchRequest)
         } catch let error {
-            print ("Error fetching all data", error)
+            print ("DEBUG: Error fetching all data", error)
         }
         
-        return fetchedData
+        self.likedPhotoData.removeAll()
+        self.likedPhotoData = fetchedData
     }
     
     

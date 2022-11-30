@@ -19,17 +19,19 @@ struct ProfileView: View {
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                         
-                        ForEach(profilePageVm.getStoredData()){ imageData in
+                        ForEach(profilePageVm.likedPhotos){ imageData in
                             SingleImageView(model: imageData)
                         }
                     }
                 }
             }
+            .onAppear(){
+                CoreDataManager.shared.fetchLikedData()
+            }
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Menu{
                         Button {
-                            print(profilePageVm.getStoredData())
                            largePhotoView = true
                         } label: {
                             Image(systemName: "square")

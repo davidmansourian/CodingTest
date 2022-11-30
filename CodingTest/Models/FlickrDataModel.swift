@@ -21,7 +21,7 @@ struct PhotosResults: Decodable{
     let photo: [SinglePhoto]
 }
 
-struct SinglePhoto: Identifiable, Decodable{
+struct SinglePhoto: Hashable, Identifiable, Decodable{
     let id: String
     let owner: String
     let secret: String

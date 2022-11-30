@@ -9,22 +9,33 @@ import Foundation
 import Combine
 
 class ProfilePageViewModel: ObservableObject{
-    private var cancellable: Cancellable?
+    private var cancellables = Set<AnyCancellable>()
     var coreDataManager = CoreDataManager.shared
+    @Published var likedPhotos: [SinglePhoto] = []
     
     init(){
+        updateLikedPhotosView()
     }
     
     
-    func getStoredData() -> [SinglePhoto]{
-        let rawLikedData = coreDataManager.fetchLikedData()
-        var likedPhotoData: [SinglePhoto] = []
+    func updateLikedPhotosView(){
+        coreDataManager.$likedPhotoData
+            .sink { [weak self] theResults in
+                guard let self = self else { return }
+                self.likedPhotos.removeAll()
+                for theImageData in theResults{
+                    self.likedPhotos.append(SinglePhoto(id: theImageData.imageKey ?? "", owner: "", secret: "", server: "", farm: 0, title: "", ispublic: 0, isfriend: 0, isfamily: 0, url: theImageData.imageUrl))
+                }
+            }.store(in: &cancellables)
         
-        for theImageData in rawLikedData{
-            print(theImageData.imageKey)
-            likedPhotoData.append(SinglePhoto(id: theImageData.imageKey ?? "", owner: "", secret: "", server: "", farm: 0, title: "", ispublic: 0, isfriend: 0, isfamily: 0, url: theImageData.imageUrl))
-        }
-        
-        return likedPhotoData
+    }
+}
+
+
+extension Array where Element: Hashable {
+    func difference(from other: [Element]) -> [Element] {
+        let thisSet = Set(self)
+        let otherSet = Set(other)
+        return Array(thisSet.symmetricDifference(otherSet))
     }
 }
