@@ -56,20 +56,7 @@ struct PickedPhotoView: View {
                     isButtonFilled.toggle()
                 }
                 
-                Button {
-                    isButtonFilled.toggle()
-                    pickedImageVm.handleImage()
-                } label: {
-                    if isButtonFilled{
-                        Image(systemName: "heart.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
-                    } else if !isButtonFilled{
-                        Image(systemName: "heart")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                    }
-                }
+                likeButton
 
             }
             .offset(y: -60)
@@ -87,5 +74,27 @@ struct PickedPhotoView: View {
 struct PickedPhotoView_Previews: PreviewProvider {
     static var previews: some View {
         PickedPhotoView(url: "https://live.staticflickr.com/8245/8674348283_78024e360a.jpg", key: "Test")
+    }
+}
+
+
+
+// Like Button (should be a general reusable likebutton. Will fix if time 
+extension PickedPhotoView{
+    var likeButton: some View{
+        Button {
+            isButtonFilled.toggle()
+            pickedImageVm.handleImage()
+        } label: {
+            if isButtonFilled{
+                Image(systemName: "heart.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.red)
+            } else if !isButtonFilled{
+                Image(systemName: "heart")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }

@@ -25,8 +25,8 @@
 		DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418229364732000992FD /* PickedPhotoView.swift */; };
 		DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418A29365DB3000992FD /* CoreDataManager.swift */; };
 		DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF418C29366319000992FD /* PickedImageViewModel.swift */; };
-		DBDF419329369411000992FD /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF419229369411000992FD /* LikeButtonView.swift */; };
 		DBDF4195293755F7000992FD /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4194293755F7000992FD /* ProfilePageViewModel.swift */; };
+		DBDF41B9293803D4000992FD /* MagnifiedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF41B8293803D4000992FD /* MagnifiedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +49,8 @@
 		DBDF418229364732000992FD /* PickedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedPhotoView.swift; sourceTree = "<group>"; };
 		DBDF418A29365DB3000992FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DBDF418C29366319000992FD /* PickedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImageViewModel.swift; sourceTree = "<group>"; };
-		DBDF419229369411000992FD /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		DBDF4194293755F7000992FD /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
+		DBDF41B8293803D4000992FD /* MagnifiedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifiedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,13 +151,9 @@
 		DBDF41622934F6BA000992FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DBDF4191293693BD000992FD /* Buttons */,
-				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
-				DBDF417329355745000992FD /* ImageResultView.swift */,
-				DBDF417629355860000992FD /* SingleImageView.swift */,
-				DBDF417D2936410A000992FD /* ProfileView.swift */,
-				DBDF417B29364050000992FD /* MainTabView.swift */,
-				DBDF418229364732000992FD /* PickedPhotoView.swift */,
+				DBDF41B729380304000992FD /* SharedViews */,
+				DBDF41BA29380A82000992FD /* SearchView */,
+				DBDF41B6293802F3000992FD /* ProfileView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,12 +167,32 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		DBDF4191293693BD000992FD /* Buttons */ = {
+		DBDF41B6293802F3000992FD /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				DBDF419229369411000992FD /* LikeButtonView.swift */,
+				DBDF417D2936410A000992FD /* ProfileView.swift */,
+				DBDF41B8293803D4000992FD /* MagnifiedImageView.swift */,
 			);
-			path = Buttons;
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		DBDF41B729380304000992FD /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF417B29364050000992FD /* MainTabView.swift */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		DBDF41BA29380A82000992FD /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF417329355745000992FD /* ImageResultView.swift */,
+				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
+				DBDF418229364732000992FD /* PickedPhotoView.swift */,
+				DBDF417629355860000992FD /* SingleImageView.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +267,8 @@
 			files = (
 				DBDF417729355860000992FD /* SingleImageView.swift in Sources */,
 				DBDF417E2936410A000992FD /* ProfileView.swift in Sources */,
-				DBDF419329369411000992FD /* LikeButtonView.swift in Sources */,
 				D9E5ADBB2934C78C00B08C7B /* Persistence.swift in Sources */,
+				DBDF41B9293803D4000992FD /* MagnifiedImageView.swift in Sources */,
 				DBDF418B29365DB3000992FD /* CoreDataManager.swift in Sources */,
 				DBDF418D29366319000992FD /* PickedImageViewModel.swift in Sources */,
 				DBDF418329364732000992FD /* PickedPhotoView.swift in Sources */,

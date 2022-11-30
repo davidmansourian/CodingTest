@@ -43,7 +43,6 @@ struct PhotoSearchView: View {
                             searchResultVm.isShowing.toggle()
                         }
                     }
-                    
             }
         }
     }
