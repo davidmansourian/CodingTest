@@ -20,16 +20,18 @@ class CoreDataManager: ObservableObject{
     private init(){}
     
     
-    func fetchLikedData(){
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+    func fetchLikedData()->[Item]{
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        var fetchedData: [Item] = []
+        
         do {
-            let fetchedData = try moc.fetch(fetchRequest)
-            print(fetchedData)
+            fetchedData = try moc.fetch(fetchRequest)
         } catch let error {
             print ("Error fetching all data", error)
         }
         
-
+        return fetchedData
     }
     
     

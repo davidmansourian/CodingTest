@@ -18,6 +18,10 @@ struct ProfileView: View {
                         Text("My Favorites")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
+                        
+                        ForEach(profilePageVm.getStoredData()){ imageData in
+                            SingleImageView(model: imageData)
+                        }
                     }
                 }
             }
@@ -25,7 +29,7 @@ struct ProfileView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Menu{
                         Button {
-                            profilePageVm.getStoredData()
+                            print(profilePageVm.getStoredData())
                            largePhotoView = true
                         } label: {
                             Image(systemName: "square")
