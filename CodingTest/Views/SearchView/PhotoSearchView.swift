@@ -16,7 +16,6 @@ struct PhotoSearchView: View {
     
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.3)
             NavigationStack{
                 ScrollView{
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 0){

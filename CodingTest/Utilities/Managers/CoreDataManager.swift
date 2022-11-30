@@ -17,9 +17,7 @@ class CoreDataManager: ObservableObject{
     private var cancellable: Cancellable?
     @Published var likedPhotoData: [Item] = []
     
-    private init(){
-    }
-    
+    private init(){}
     
     func fetchLikedData(){
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -35,8 +33,6 @@ class CoreDataManager: ObservableObject{
         self.likedPhotoData.removeAll()
         self.likedPhotoData = fetchedData
     }
-    
-    
     
     func photoIsLiked(urlString: String, keyString: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
@@ -57,7 +53,6 @@ class CoreDataManager: ObservableObject{
         }
         return true
     }
-    
     
     func likeUnlikeImage(urlString: String, keyString: String){
         if !photoIsLiked(urlString: urlString, keyString: keyString){

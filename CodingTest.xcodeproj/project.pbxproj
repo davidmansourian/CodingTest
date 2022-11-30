@@ -187,8 +187,8 @@
 		DBDF41BA29380A82000992FD /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				DBDF417329355745000992FD /* ImageResultView.swift */,
 				DBDF41632934F6FC000992FD /* PhotoSearchView.swift */,
+				DBDF417329355745000992FD /* ImageResultView.swift */,
 				DBDF418229364732000992FD /* PickedPhotoView.swift */,
 				DBDF417629355860000992FD /* SingleImageView.swift */,
 			);

@@ -14,9 +14,7 @@ import SwiftUI
 class CacheManager: ObservableObject{
     static let shared = CacheManager()
     
-    private init(){
-    
-    }
+    private init(){}
     
     var photoCache: NSCache<NSString, UIImage> = {
         var cache = NSCache<NSString, UIImage>()
