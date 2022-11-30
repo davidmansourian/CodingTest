@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct ProfileView: View {
+    private let columns = [GridItem(.adaptive(minimum: 130), spacing: 0)]
     @StateObject var profilePageVm = ProfilePageViewModel()
     @State private var largePhotoView: Bool = true
     var body: some View {
         NavigationStack{
             ZStack{
                 ScrollView(.vertical){
-                    VStack{
-                        Text("My Favorites")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                        
-                        ForEach(profilePageVm.likedPhotos){ imageData in
-                            SingleImageView(model: imageData)
+                    if largePhotoView{
+                        VStack{
+                            Text("My Favorites")
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                            
+                            ForEach(profilePageVm.likedPhotos){ imageData in
+                                SingleImageView(model: imageData)
+                            }
+                        }
+                    }
+                    else{
+                        VStack {
+                            Text("My Favorites")
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                            LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
+                                ForEach(profilePageVm.likedPhotos){ searchResults in
+                                    Button {
+                                        withAnimation(.default){
+                                        }
+                                    } label: {
+                                        SingleImageView(model: searchResults)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -30,32 +50,7 @@ struct ProfileView: View {
             }
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Menu{
-                        Button {
-                           largePhotoView = true
-                        } label: {
-                            Image(systemName: "square")
-                            Text("Single View")
-                        }
-                        Button {
-                            largePhotoView = false
-                        } label: {
-                            Image(systemName: "square.split.2x2")
-                            Text("Grid View")
-                        }
-
-
-                    } label: {
-                        largePhotoView ?
-                        Image(systemName: "square")
-                            .foregroundColor(.black)
-                            .padding(10).background(.gray.opacity(0.2))
-                            .clipShape(Circle()) :
-                        Image(systemName : "square.split.2x2")
-                            .foregroundColor(.black)
-                            .padding(10).background(.gray.opacity(0.2))
-                            .clipShape(Circle())
-                    }
+                    toolBarLayout
                     
                 }
             }
@@ -66,5 +61,30 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+    }
+}
+
+
+
+
+// ToolBar-layout for profile
+extension ProfileView{
+    var toolBarLayout: some View{
+        Button {
+            withAnimation(.default){
+                largePhotoView.toggle()
+            }
+        } label: {
+            largePhotoView ?
+            Image(systemName: "square")
+                .foregroundColor(.black)
+                .padding(10).background(.gray.opacity(0.2))
+                .clipShape(Circle()) :
+            Image(systemName : "square.split.2x2")
+                .foregroundColor(.black)
+                .padding(10).background(.gray.opacity(0.2))
+                .clipShape(Circle())
+        }
+        
     }
 }
