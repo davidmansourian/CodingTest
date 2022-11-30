@@ -20,9 +20,7 @@ struct PickedPhotoView: View {
         ZStack{
             Color.black.opacity(0.9)
                 .edgesIgnoringSafeArea(.all)
-            
 
-            
             VStack{
                 VStack{
                     if imageResultsVm.isLoading{
@@ -31,7 +29,7 @@ struct PickedPhotoView: View {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 380)
+                            .frame(width: 370)
                             .cornerRadius(15)
                     }
                     
@@ -76,6 +74,7 @@ struct PickedPhotoView: View {
             }
             .offset(y: -60)
         }
+        .toolbar(.hidden, for: .tabBar)
         .onAppear{
             pickedImageVm.likedUrlString = imageResultsVm.urlString
             pickedImageVm.likedKeyString = imageResultsVm.imageKey

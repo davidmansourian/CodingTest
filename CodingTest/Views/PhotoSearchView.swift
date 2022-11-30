@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct PhotoSearchView: View {
-
-    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 0)]
+    private let columns = [GridItem(.adaptive(minimum: 130), spacing: 0)]
     @StateObject var searchResultVm = SearchResultsViewModel()
     @StateObject var searchAPI = APILoaderService.shared
     
@@ -22,7 +21,7 @@ struct PhotoSearchView: View {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 0){
                         ForEach(searchResultVm.photosResults){ searchResults in
                             Button {
-                                withAnimation(.easeInOut(duration: 0.5)){
+                                withAnimation(.default){
                                     searchResultVm.pickedImageUrl = searchResults.url ?? ""
                                     searchResultVm.pickedImageKey = searchResults.id
                                     searchResultVm.isShowing.toggle()
@@ -33,16 +32,17 @@ struct PhotoSearchView: View {
                         }
                     }
                 }
-                .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
+                .searchable(text: $searchAPI.searchString, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Search any image").autocorrectionDisabled()
+                
             }
             if searchResultVm.isShowing{
                 PickedPhotoView(url: searchResultVm.pickedImageUrl, key: searchResultVm.pickedImageKey)
                     .onTapGesture {
-                        withAnimation(.easeInOut(duration: 0.5)){
+                        withAnimation(.default){
                             searchResultVm.isShowing.toggle()
                         }
                     }
-                    .toolbar(.hidden, for: .tabBar)
+                    
             }
         }
     }
