@@ -24,7 +24,7 @@ class ProfilePageViewModel: ObservableObject{
                 guard let self = self else { return }
                 self.likedPhotos.removeAll()
                 for theImageData in theResults{
-                    self.likedPhotos.append(SinglePhoto(id: theImageData.imageKey ?? "", owner: "", secret: "", server: "", farm: 0, title: "", ispublic: 0, isfriend: 0, isfamily: 0, url: theImageData.imageUrl))
+                    self.likedPhotos.append(SinglePhoto(id: theImageData.imageKey ?? "", secret: "", server: "", farm: 0, title: "", url: theImageData.imageUrl))
                 }
             }.store(in: &cancellables)
         

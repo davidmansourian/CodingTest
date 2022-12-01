@@ -13,6 +13,11 @@ struct PhotoSearchModel: Decodable{
     let stat: String
 }
 
+struct PhotoResultModel: Decodable{
+    let photo: PhotoDetail
+    let stat: String
+}
+
 struct PhotosResults: Decodable{
     let page: Int
     let pages: Int
@@ -23,14 +28,38 @@ struct PhotosResults: Decodable{
 
 struct SinglePhoto: Hashable, Identifiable, Decodable{
     let id: String
-    let owner: String
     let secret: String
     let server: String
     let farm: Int
     let title: String
-    let ispublic: Int
-    let isfriend: Int
-    let isfamily: Int
     var url: String?
-    var isLiked: Bool?
+}
+
+
+struct PhotoDetail: Decodable{
+    let title: Comments
+    let photoDescription: Comments
+    let owner: Owner
+    let dateuploaded: String
+    
+    enum CodingKeys: String, CodingKey {
+         case title, owner, dateuploaded
+         case photoDescription = "description"
+     }
+}
+
+struct Comments: Decodable {
+    let content: String
+    
+    enum CodingKeys: String, CodingKey {
+            case content = "_content"
+        }
+}
+
+struct Owner: Decodable {
+    let username: String
+
+    enum CodingKeys: String, CodingKey {
+        case username
+    }
 }

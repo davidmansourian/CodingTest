@@ -34,15 +34,10 @@ struct PickedPhotoView: View {
                     }
                     
                     VStack{
-                        Text("This is a test text for images. The image title will ideally be shown beneath the picture along with image related tags The thought is that the user can browse more photos like this by pressing the tag")
+                        Text(imageResultsVm.fullImageString)
                             .padding(.top, 10)
                             .padding(.horizontal, 10)
                             .foregroundColor(.white)
-                            .layoutPriority(1)
-                        Text("#mountain #snow #white #alps #snowboard #goals")
-                            .padding(.top, 10)
-                            .foregroundColor(.blue)
-                        
                     }
                 }
                 .background(

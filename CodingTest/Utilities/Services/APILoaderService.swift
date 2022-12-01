@@ -12,6 +12,7 @@ class APILoaderService: ObservableObject{
     static let shared = APILoaderService()
     @Published var photosModel: PhotoSearchModel?
     @Published var searchString: String = ""
+    @Published var searchPage: String = "1"
     private var cancellables = Set<AnyCancellable>()
     private var jsonDecoder = JSONDecoder()
     
@@ -27,7 +28,10 @@ class APILoaderService: ObservableObject{
     var page: String = ""
     
     
-    private init(){
+    
+    // https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=3ace85391fe1920dc335451547af721e&photo_id=45615437871&format=json&nojsoncallback=1
+    
+    private init(){        
         $searchString
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .default))
             .sink { [weak self] theSearchTerm in
@@ -58,6 +62,7 @@ class APILoaderService: ObservableObject{
                                   URLQueryItem(name: "sort", value: chosenSort),
                                   URLQueryItem(name: "safe_search", value: safeSearch),
                                   URLQueryItem(name: "per_page", value: "48"),
+                                  URLQueryItem(name: "page", value: searchPage),
                                   URLQueryItem(name: "format", value: format),
                                   URLQueryItem(name: "nojsoncallback", value: noJsonCallback)]
         

@@ -10,24 +10,26 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedView = 0
     var body: some View {
-        TabView(selection: $selectedView){
-            PhotoSearchView()
-                .onTapGesture {
-                    self.selectedView = 0
-                }
-                .tabItem{
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }.tag(0)
-            
-            ProfileView()
-                .onTapGesture {
-                    self.selectedView = 1
-                }
-                .tabItem{
-                    Image(systemName: "figure.stand")
-                    Text("Me")
-                }.tag(1)
+        NavigationStack{
+            TabView(selection: $selectedView){
+                PhotoSearchView()
+                    .onTapGesture {
+                        self.selectedView = 0
+                    }
+                    .tabItem{
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }.tag(0)
+                
+                ProfileView()
+                    .onTapGesture {
+                        self.selectedView = 1
+                    }
+                    .tabItem{
+                        Image(systemName: "figure.stand")
+                        Text("Me")
+                    }.tag(1)
+            }
         }
     }
 }

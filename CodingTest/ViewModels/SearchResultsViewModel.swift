@@ -9,8 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 
-// https://live.staticflickr.com/{server-id}/{id}_{secret}.jpg , need to input search result details into this
-
 class SearchResultsViewModel: ObservableObject{
     var photoSearchService = APILoaderService.shared
     static let shared = SearchResultsViewModel()
@@ -22,7 +20,7 @@ class SearchResultsViewModel: ObservableObject{
     @Published var isShowing: Bool = false
     @Published var pickedImageUrl: String = ""
     @Published var pickedImageKey: String = ""
-    
+        
     init(){
         getSearchResults()
 
@@ -47,6 +45,7 @@ class SearchResultsViewModel: ObservableObject{
             })
             .store(in: &cancellables)
     }
+
     
     func loadResultsWithURL(){
         for i in 0..<photosResults.count{

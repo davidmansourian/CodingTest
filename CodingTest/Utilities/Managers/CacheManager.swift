@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-// cahcemanager implemented with the help of video: https://www.youtube.com/watch?v=yXSC6jTkLP4
+// cache implemented with the help of video: https://www.youtube.com/watch?v=yXSC6jTkLP4
 
 
 class CacheManager: ObservableObject{
