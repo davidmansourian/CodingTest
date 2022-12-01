@@ -49,7 +49,7 @@ class CoreDataManager: ObservableObject{
                 return true
             }
         } catch let error as NSError{
-            print("Could not fetch \(error) \(error.userInfo)")
+            print("DEBUG: Could not fetch \(error) \(error.userInfo)")
         }
         return true
     }

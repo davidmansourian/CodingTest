@@ -35,7 +35,7 @@ struct PhotoSearchView: View {
                         }
                     }
                 }
-                .searchable(text: $searchAPI.searchString, placement: .navigationBarDrawer(displayMode: .automatic)).autocorrectionDisabled()
+                .searchable(text: $searchAPI.searchString).autocorrectionDisabled()
                 .scrollDismissesKeyboard(.immediately)
                 
             }
@@ -56,9 +56,3 @@ struct PhotoSearchView_Previews: PreviewProvider {
         PhotoSearchView()
     }
 }
-
-
-
-
-// code stolen from stackoverflow
-

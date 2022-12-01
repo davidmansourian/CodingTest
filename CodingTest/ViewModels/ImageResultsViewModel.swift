@@ -34,10 +34,10 @@ class ImageResultsViewModel: ObservableObject{
     func getImage(){
         if let cachedImage = cacheManager.get(key: urlString){
             image = cachedImage
-            print("Getting cached image")
+            print("DEBUG: Getting cached image")
         } else {
             downloadImageResult()
-            print("Downloading image")
+            print("DEBUG: Downloading image")
         }
     }
     

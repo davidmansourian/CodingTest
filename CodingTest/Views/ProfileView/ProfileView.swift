@@ -61,10 +61,6 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 
-
-
-
-
 // Large PhotoView
 extension ProfileView{
     var theLargePhotoView: some View{

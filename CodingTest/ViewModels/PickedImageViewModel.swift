@@ -41,7 +41,7 @@ class PickedImageViewModel: ObservableObject{
                     print(completion)
                     break
                 case.failure(let error):
-                    print("Couldn't register liked image.", error)
+                    print("DEBUG: Couldn't register liked image.", error)
                 }
             }, receiveValue: { [weak self] likedImageUrl, likedImageString in
                 self?.likeButtonIsPressed = true

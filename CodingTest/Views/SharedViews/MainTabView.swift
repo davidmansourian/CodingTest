@@ -10,16 +10,15 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedView = 0
     var body: some View {
-        NavigationStack{
             TabView(selection: $selectedView){
-                PhotoSearchView()
-                    .onTapGesture {
-                        self.selectedView = 0
-                    }
-                    .tabItem{
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }.tag(0)
+                    PhotoSearchView()
+                        .onTapGesture {
+                            self.selectedView = 0
+                        }
+                        .tabItem{
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }.tag(0)
                 
                 ProfileView()
                     .onTapGesture {
@@ -30,7 +29,6 @@ struct MainTabView: View {
                         Text("Me")
                     }.tag(1)
             }
-        }
     }
 }
 
